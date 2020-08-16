@@ -3,10 +3,13 @@ import './products.dart';
 
 class ProductManager extends StatefulWidget {
   String decription;
-  ProductManager({this.decription = 'Food'} );
+  ProductManager({this.decription = 'Food'} ){
+    print("productManager constructor");
+  }
 
   @override
   State<StatefulWidget> createState() {
+    print("productManager CreateState");
     return _ProductManagerState();
   }
 }
@@ -15,13 +18,13 @@ class _ProductManagerState extends State<ProductManager> {
   List<String> _products = [];
   @override
   void initState() {
-    print('initstate');
+    print(' productManager initState');
     _products.add(widget.decription);
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
-    print('build first');
+    print('productManager build');
     return Column(children: [
       Container(
       margin: EdgeInsets.all(2.0),
@@ -29,6 +32,7 @@ class _ProductManagerState extends State<ProductManager> {
         color: Theme.of(context).primaryColor,
         onPressed: () {
           setState(() {
+            print("setState");
             _products.add(
               'advance food tester',
             );
