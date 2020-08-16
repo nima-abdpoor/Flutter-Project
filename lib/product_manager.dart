@@ -29,7 +29,7 @@ class _ProductManagerState extends State<ProductManager> {
       Container(
       margin: EdgeInsets.all(2.0),
       child: RaisedButton(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).accentColor,
         onPressed: () {
           setState(() {
             print("setState");
