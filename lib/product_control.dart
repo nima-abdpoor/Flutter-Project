@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProductControl extends StatelessWidget{
@@ -7,7 +8,10 @@ class ProductControl extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      color: Theme.of(context).accentColor,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+          side: BorderSide(color: Colors.red)
+      ),
       onPressed: () {
         addProduct('Sweets');
       },
