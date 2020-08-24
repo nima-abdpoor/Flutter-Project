@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:helloflutter/Pages/HomePage.dart';
 import 'package:helloflutter/product_manager.dart';
 
 main(List<String> args) {
@@ -10,7 +11,6 @@ main(List<String> args) {
 }
 
 class MyApp extends StatelessWidget {
-  String s = 'first app';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,16 +19,6 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
           accentColor: Colors.deepPurple
       ),
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text(
-          s,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
-      body: ProductManager(decription  : 'Food tester'),
-    ));
+        home: HomePage());
   }
 }
