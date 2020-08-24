@@ -21,8 +21,7 @@ class _ProductManagerState extends State<ProductManager> {
 
   @override
   void initState() {
-    print(' productManager initState');
-    _products.add(widget.decription);
+    //_products.add(widget.decription);
     super.initState();
   }
 
@@ -42,7 +41,6 @@ class _ProductManagerState extends State<ProductManager> {
   }
 
   _addProduct(String product) {
-    print("setState");
     setState(() {
       _products.add(
         product,
