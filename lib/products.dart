@@ -3,8 +3,9 @@ import 'package:helloflutter/Pages/DetailProduct.dart';
 
 class product extends StatelessWidget {
   final List<Map<String, String>> products;
+  final Function deleteProdcut ;
 
-  product(this.products) {
+  product(this.products , {this.deleteProdcut}) {
     print("product constructor");
   }
 
@@ -13,12 +14,12 @@ class product extends StatelessWidget {
     print("product build()");
     return products.length > 0
         ? ListView.builder(
-            itemBuilder: _buildProductItem,
-            itemCount: products.length,
-          )
+      itemBuilder: _buildProductItem,
+      itemCount: products.length,
+    )
         : Center(
-            child: Text('No Products Found, Please add some'),
-          );
+      child: Text('No Products Found, Please add some'),
+    );
   }
 
   Widget _buildProductItem(BuildContext context, int index) {
@@ -33,12 +34,19 @@ class product extends StatelessWidget {
             children: <Widget>[
               FlatButton(
                 child: Text(detailbtn),
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => DetailProduct(
-                            products[index]['title'],
-                            products[index]['image']))),
+                onPressed: () =>
+                    Navigator.push <bool>(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                DetailProduct(
+                                    products[index]['title'],
+                                    products[index]['image']))).then(
+                        (bool value){
+                          if(value){
+                           deleteProdcut(index);
+                          }
+                        }),
               )
             ],
           )

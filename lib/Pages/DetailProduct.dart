@@ -29,9 +29,9 @@ class DetailProduct extends StatelessWidget {
             Container(
               child: RaisedButton(
                 padding: EdgeInsets.all( 0.05),
-                child: Text('Back'),
-                color: Theme.of(context).accentColor,
-                onPressed: () => Navigator.pop(context),
+                child: Text('Delete'),
+                color: Colors.red,
+                onPressed: () => Navigator.pop(context, true),
               ),
             ),
           ],

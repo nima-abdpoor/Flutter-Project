@@ -33,7 +33,7 @@ class _ProductManagerState extends State<ProductManager> {
         Container(
             margin: EdgeInsets.all(2.0), child: ProductControl(_addProduct)),
         Expanded(
-          child: product(_products),
+          child: product(_products , deleteProdcut: _deleteProduct),
         )
       ],
     );
@@ -44,6 +44,12 @@ class _ProductManagerState extends State<ProductManager> {
       _products.add(
         product,
       );
+    });
+  }
+
+  void _deleteProduct(int index) {
+    setState(() {
+      _products.removeAt(index);
     });
   }
 }
