@@ -15,12 +15,22 @@ class DetailProduct extends StatelessWidget {
           centerTitle: true,
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-              child: Text('Back'),
-              onPressed: () => Navigator.pop(context),
+            Image.asset('assets/food.jpg'),
+            Container(
+              child: RaisedButton(
+                padding: EdgeInsets.all(10.0),
+                child: Text('Back'),
+                color: Theme.of(context).accentColor,
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
-            Text('Detail')
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text('Detail'),
+              color: Theme.of(context).accentColor,
+            )
           ],
         ));
   }
