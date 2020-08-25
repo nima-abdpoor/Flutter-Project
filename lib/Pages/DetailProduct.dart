@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DetailProduct extends StatelessWidget {
-  String title = 'Details';
+  final String title;
+
+  final String imageUrl;
+
+  DetailProduct(this.title, this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +21,19 @@ class DetailProduct extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/food.jpg'),
+            Image.asset(imageUrl),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text(title),
+            ),
             Container(
               child: RaisedButton(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all( 0.05),
                 child: Text('Back'),
                 color: Theme.of(context).accentColor,
                 onPressed: () => Navigator.pop(context),
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text('Detail'),
-              color: Theme.of(context).accentColor,
-            )
           ],
         ));
   }

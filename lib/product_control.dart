@@ -13,7 +13,7 @@ class ProductControl extends StatelessWidget{
           side: BorderSide(color: Colors.red)
       ),
       onPressed: () {
-        addProduct('Sweets');
+        addProduct({'title' : 'Chocolate' , 'image' : 'assets/food.jpg'});
       },
       child: Text(
         'add product',

@@ -17,7 +17,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = [];
+  List<Map<String, String>> _products = [];
 
   @override
   void initState() {
@@ -31,8 +31,7 @@ class _ProductManagerState extends State<ProductManager> {
     return Column(
       children: [
         Container(
-            margin: EdgeInsets.all(2.0),
-            child: ProductControl(_addProduct)),
+            margin: EdgeInsets.all(2.0), child: ProductControl(_addProduct)),
         Expanded(
           child: product(_products),
         )
@@ -40,7 +39,7 @@ class _ProductManagerState extends State<ProductManager> {
     );
   }
 
-  _addProduct(String product) {
+  _addProduct(Map<String, String> product) {
     setState(() {
       _products.add(
         product,

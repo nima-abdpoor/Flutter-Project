@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:helloflutter/Pages/DetailProduct.dart';
 
 class product extends StatelessWidget {
-  final List<String> products;
+  final List<Map<String, String>> products;
 
   product(this.products) {
     print("product constructor");
@@ -22,22 +22,23 @@ class product extends StatelessWidget {
   }
 
   Widget _buildProductItem(BuildContext context, int index) {
+    String detailbtn = 'Details';
     return Card(
       child: Column(
         children: <Widget>[
-          Image.asset('assets/food.jpg'),
-          Text(
-            products[index],
-          ),
+          Image.asset(products[index]['image']),
+          Text(products[index]['title']),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
-                child: Text('details'),
+                child: Text(detailbtn),
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => DetailProduct())),
+                        builder: (BuildContext context) => DetailProduct(
+                            products[index]['title'],
+                            products[index]['image']))),
               )
             ],
           )
