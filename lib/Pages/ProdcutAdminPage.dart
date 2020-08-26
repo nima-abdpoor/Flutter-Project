@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:helloflutter/Pages/ProdcutAdminPage.dart';
 
-import '../product_manager.dart';
+import 'HomePage.dart';
 
-class HomePage extends StatelessWidget {
-  String s = 'first app';
-
+class ProductAdminPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,13 +14,12 @@ class HomePage extends StatelessWidget {
               automaticallyImplyLeading: false,
             ),
             ListTile(
-              title: Text('Manage Products'),
+              title: Text('All Products'),
               onTap: () => {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (BuildContext context)=>
-                    ProductAdminPage()
-                  ),
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => HomePage()),
                 )
               },
             )
@@ -32,13 +28,15 @@ class HomePage extends StatelessWidget {
       ),
       appBar: AppBar(
         title: Text(
-          s,
+          'Manage Products',
           textAlign: TextAlign.center,
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
-      body: ProductManager(decription: 'Food tester'),
+      body: Center(
+        child: Text('Manage Your Products'),
+      ),
     );
   }
 }
