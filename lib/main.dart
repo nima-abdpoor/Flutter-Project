@@ -2,9 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:helloflutter/Pages/HomePage.dart';
-import 'package:helloflutter/product_manager.dart';
+import 'package:helloflutter/Pages/Authenctication.dart';
+
 
 main(List<String> args) {
   runApp(MyApp());
@@ -19,6 +18,6 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
           accentColor: Colors.deepPurple
       ),
-        home: HomePage());
+        home: AuthPage());
   }
 }
