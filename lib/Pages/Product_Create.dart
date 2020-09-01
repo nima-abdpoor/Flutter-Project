@@ -15,8 +15,8 @@ class ProductCreatePage extends State<ProductPageCreate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
-      child: Column(
+      margin: EdgeInsets.all(15.0),
+      child: ListView(
         children: <Widget>[
           TextField(
             style: TextStyle(
@@ -69,6 +69,13 @@ class ProductCreatePage extends State<ProductPageCreate> {
               setState(() {
                 price = value as double;
               });
+            },
+          ),
+          RaisedButton(
+            child: Text('Save'),
+            color: Color(Colors.green.value),
+            onPressed: (){
+
             },
           )
         ],
