@@ -9,7 +9,9 @@ class ProductPageCreate extends StatefulWidget{
 
 }
 class ProductCreatePage extends State<ProductPageCreate>{
-  String _value = '';
+  String value;
+  String description;
+  double price;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,12 +19,30 @@ class ProductCreatePage extends State<ProductPageCreate>{
         TextField(
           autofocus: false,
           autocorrect: true,
+          maxLines: 1,
+          onChanged: (String value){
+            setState(() {
+              value = value;
+            });
+          },),
+        TextField(
+          autofocus: false,
+          autocorrect: true,
+          maxLines: 4,
           onChanged: (String value){
            setState(() {
-             _value = value;
+             description = value;
            });
         },),
-        Text(_value)
+        TextField(
+          autofocus: false,
+          autocorrect: true,
+          keyboardType: TextInputType.number,
+          onChanged: (String value){
+            setState(() {
+              price = value as double;
+            });
+          },)
       ],
     );
   }
